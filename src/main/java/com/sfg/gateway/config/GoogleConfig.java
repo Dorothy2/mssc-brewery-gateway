@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+// comment out unless testing
 //@Profile("google")
 //@Configuration
 public class GoogleConfig {
@@ -13,8 +14,8 @@ public class GoogleConfig {
 	@Bean
 	public RouteLocator googleRouteConfig(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route(r -> r.path("/googlesearch2")
-			    .filters(f -> f.rewritePath("/googlesearch2(?<segment>/?.*)", "/${segment}"))
+				.route(r -> r.path("/googlesearch3")
+			    .filters(f -> f.rewritePath("/googlesearch3(?<segment>/?.*)", "/${segment}"))
 			    .uri("https://google.com")
 			    .id("google"))
 				.build();

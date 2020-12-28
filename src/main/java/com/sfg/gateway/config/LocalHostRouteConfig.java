@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LocalHostRouteConfig {
 
+	// annotate as bean so it gets brought into Spring Context
 	@Bean
 	public RouteLocator localHostRoutes(RouteLocatorBuilder builder) {
 		return builder.routes()
